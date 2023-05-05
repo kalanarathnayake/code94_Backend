@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "1391d7e8-f68a-4632-81da-925623d0c0db",
+		"name": "Code94 Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11839336"
+	},
+	"item": [
+		{
+			"name": "ProductRecords",
+			"item": [
+				{
+					"name": "Get All Product records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								""
+							]
+						},
+						"description": "This API provides access to all news data in the database through endpoints that allow users to retrieve news articles or filter results based on certain criteria. It returns data in JSON or XML format and has documentation that explains how to use it."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product record by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/product/645248b666eeb86c39875340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"645248b666eeb86c39875340"
+							]
+						},
+						"description": "This API provides access a specific news based on the news id."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/product/645248b666eeb86c39875340",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"645248b666eeb86c39875340"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API provides deletion of a specific news. Used by admin, in order to delete any unwanted news articles."
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlZmI3NDI4ZDhhN2RmZWQ0YjI5NjgwIn0sImlhdCI6MTY3NjY1NDQwMiwiZXhwIjoxNjc3MDE0NDAyfQ.DaQwMHCiTRPKci6xadjzWVg_tidLkorjkm9tP7lOhds",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sku\": \"Sample data SKU\",\r\n    \"quantity\": 10,\r\n    \"productName\": \"Sample Name\",\r\n    \"imgUrl\": \"Test URL\",\r\n    \"productDescription\": \"Sample Description\",\r\n    \"isFavourite\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/product/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"add"
+							]
+						},
+						"description": "This API provides access to insert new news into the news board. Used by admin to enter new news articles to the news board."
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product record",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlYTJhZmQyMjVkODA1NWMyZWM1NjI1In0sImlhdCI6MTY3NjI5MDg3NCwiZXhwIjoxNjc2NjUwODc0fQ.6787d4RgA8P32QlyBYJ_u1zgtzc5E3Ew4j0NajD3vPc",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sku\": \"Sample Updated data SKU\",\r\n    \"quantity\": 20,\r\n    \"productName\": \"Updated Sample Name\",\r\n    \"imgUrl\": \"Sample Updated URL\",\r\n    \"productDescription\": \"Sample Updated Description\",\r\n    \"isFavourite\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/product/6452a98bfbd29eeb5fce3ebb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"product",
+								"6452a98bfbd29eeb5fce3ebb"
+							]
+						},
+						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
