@@ -100,7 +100,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"sku\": \"Sample data SKU\",\r\n    \"quantity\": 10,\r\n    \"productName\": \"Sample Name\",\r\n    \"imgUrl\": \"Test URL\",\r\n    \"productDescription\": \"Sample Description\",\r\n    \"isFavourite\": 0\r\n}",
+							"raw": "{\r\n    // \"sku\": \"hfgdsvufinuhyg\",\r\n    // \"quantity\": \"10\",\r\n    // \"productName\": \"kala\",\r\n    // \"imgUrl\": \"Test URL\",\r\n    // \"productDescription\": \"Sample Description\",\r\n    // \"isFavourite\": 0,\r\n    // \"price\": \"1500.00\"\r\n    \"sku\": \"StringStringString\",\r\n    \"quantity\": \"123\",\r\n    \"productName\": \"StringStringString\",\r\n    \"imgUrl\": \"StringStringString\",\r\n    \"productDescription\": \"StringString\",\r\n    \"isFavourite\": true,\r\n    \"price\": \"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,12 +108,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/product/add",
+							"raw": "http://localhost:8091/product/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "5000",
+							"port": "8091",
 							"path": [
 								"product",
 								"add"
@@ -163,6 +163,100 @@
 							]
 						},
 						"description": "This API provides access to update any existing news in the news board. Used by admin to perform any modifications to any existing news articles in the news board."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Kalana Rathnayake\",\r\n    \"email\":\"kalanagayanga8@gmail.com\",\r\n    \"password\":\"Password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"register"
+							]
+						},
+						"description": "This API provides access to register (add) new users to the system."
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kalana@gmail.com\",\r\n    \"password\":\"kalana123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8091/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin",
+								"login"
+							]
+						},
+						"description": "This API allows users to login into the website based on the credentials they have provided. If only the credentials they have provided are valid, the users will be allowed to login to the website."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Admin",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1Mn0sImlhdCI6MTY4MzI0MTI4OCwiZXhwIjoxNjgzNjAxMjg4fQ.h9r8wnxya6O_9SkkTOQsUYMrvY_NM5n8Z8Hp62QVtO0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8091/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"admin"
+							]
+						},
+						"description": "This API provides access to view details about all the admins registered in the system."
 					},
 					"response": []
 				}
