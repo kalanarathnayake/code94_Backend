@@ -27,15 +27,15 @@ UserSchema.pre('save', async function (next) {
     return next();
 });
 
-UserSchema.methods.generateAuthToken = async function () {
-    const user = this;
-    const secret = process.env.JWT_SECRET;
+// UserSchema.methods.generateAuthToken = async function () {
+//     const user = this;
+//     const secret = process.env.JWT_SECRET;
 
-    const authToken = jwt.sign({ _id: user._id }, secret);
-    user.authToken = authToken;
-    await user.save();
-    return authToken;
-};
+//     const authToken = jwt.sign({ _id: user._id }, secret);
+//     user.authToken = authToken;
+//     await user.save();
+//     return authToken;
+// };
 
 UserSchema.methods.generateAuthToken = async function () {
     const user = this;

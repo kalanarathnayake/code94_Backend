@@ -50,6 +50,7 @@ const login = async (req, res) => {
 //Register admin
 const register = async (req, res) => {
     console.log('here');
+    //destructure
     const { fullName, email, password } = req.body;
 
     try {
@@ -66,7 +67,7 @@ const register = async (req, res) => {
             });
 
             const registerdUser = await newUser.save();
-            await newUser.generateAuthToken();
+            // await newUser.generateAuthToken();
             return res.status(201).json(registerdUser);
         }
     } catch (err) {
